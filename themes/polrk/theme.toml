@@ -1,0 +1,11 @@
+name = "Polrk theme"
+license = "MIT"
+description = ""
+homepage = "https://polRk.com/"
+tags = []
+features = []
+min_version = "0.41"
+
+[author]
+  name = "Vladislav Polyakov"
+  homepage = "https://polrk.com"
