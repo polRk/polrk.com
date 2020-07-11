@@ -1,0 +1,32 @@
+{{ $baseurl := .Site.BaseURL }}
+{{ $description := .Site.Params.Description }}
+{{ if not .IsHome }}{{ if .Description }}{{ $description = .Description }}{{ else if .IsPage}}{{ $description = .Summary }}{{ end }}{{ end }}
+
+<!-- Meta Data -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="{{ .Site.Params.Author }}">
+<meta name="description" content="{{ $description }}">
+{{ if .Params.Keywords }}<meta name="keywords" content="{{ .Params.Keywords }}">{{ else if .Site.Params.Keywords }}<meta name="keywords" content="{{ .Site.Params.Keywords }}">{{ end }}
+<meta name="copyright" content="{{ .Site.Params.Copyright }}">  
+<meta name="msapplication-TileImage" content="/assets/ms-icon-144x144.png" />
+<meta name="msapplication-TileColor" content="#f93c00" />
+<meta http-equiv="Reply-to" content="polrkov.tm@gmail.com">
+<meta name="HandheldFriendly" content="True"/>
+<meta name="theme-color" content="#f93c00" />
+<!-- Open Graph data -->
+<meta property="og:site_name" content="{{ .Site.Params.Name }}" />
+<meta property="og:title" content="{{ .Title }}" />
+<meta property="og:description" content="{{ $description }}" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="{{ .Permalink }}" />
+{{ with .Params.images }}{{ range first 6 . }}<meta property="og:image" content="{{ if in . "http" }}{{ . }}{{ else }}{{ $baseurl }}{{ . }}{{ end }}" />{{ end }}{{ end }}
+{{ if .Params.Keywords }}<meta property="og:keywords" content="{{ .Params.Keywords }}">{{ else if .Site.Params.Keywords }}<meta property="og:keywords" content="{{ .Site.Params.Keywords }}">{{ end }}
+<!-- Twitter data -->
+<meta name="twitter:site" content="{{ .Site.Params.Name }}">
+<meta name="twitter:title" content="{{ .Title }}">
+<meta name="twitter:description" content="{{ $description }}">
+<meta name="twitter:creator" content="{{ .Site.Params.Author }}">
+<meta name="twitter:card" content="photo" />
+<meta name="twitter:url" content="{{ .Permalink }}?utm_medium=social_organic&amp;utm_source=twitter&amp;utm_campaign=global_brand_followers&amp;utm_content={{ .Kind }}"/>
+{{ with .Params.images }}{{ range first 6 . }}<meta property="twitter:image" content="{{ if in . "http" }}{{ . }}{{ else }}{{ $baseurl }}{{ . }}{{ end }}" />{{ end }}{{ end }}

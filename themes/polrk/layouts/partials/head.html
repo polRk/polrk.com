@@ -1,58 +1,7 @@
-{{ $baseurl := .Site.BaseURL }}
-{{ $title := .Site.Title }}
-{{ $description := .Site.Params.Description }}
-{{ if ne .Title .Site.Title }}{{ $title = printf "%s - %s" $.Title $.Site.Title }}{{ end }}
-{{ if not .IsHome }}{{ if .Description }}{{ $description = .Description }}{{ else if .IsPage}}{{ $description = .Summary }}{{ end }}{{ end }}
-
 <head lang="en">
     <meta charset="utf-8" />
-    <title>{{ $title }}</title>
-
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon-180x180.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="/assets/apple-touch-icon-152x152.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="/assets/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon" sizes="120x120" href="/assets/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="/assets/apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon" sizes="76x76" href="/assets/apple-touch-icon-76x76.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="/assets/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="60x60" href="/assets/apple-touch-icon-60x60.png" />
-    <link rel="apple-touch-icon" sizes="57x57" href="/assets/apple-touch-icon-57x57.png" />
-
-    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/android-icon-192x192.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />    
-
-	<!-- Meta Data -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="{{ .Site.Params.Author }}">
-    <meta name="description" content="{{ $description }}">
-    {{ if .Params.Keywords }}<meta name="keywords" content="{{ .Params.Keywords }}">{{ else if .Site.Params.Keywords }}<meta name="keywords" content="{{ .Site.Params.Keywords }}">{{ end }}
-    <meta name="copyright" content="{{ .Site.Params.Copyright }}">  
-
-    <!-- Open Graph data -->
-    <meta property="og:site_name" content="{{ .Site.Params.Name }}" />
-    <meta property="og:title" content="{{ $title }}" />
-    <meta property="og:description" content="{{ $description }}" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="{{ .Permalink }}" />
-    {{ with .Params.images }}{{ range first 6 . }}<meta property="og:image" content="{{ if in . "http" }}{{ . }}{{ else }}{{ $baseurl }}{{ . }}{{ end }}" />{{ end }}{{ end }}
-    {{ if .Params.Keywords }}<meta property="og:keywords" content="{{ .Params.Keywords }}">{{ else if .Site.Params.Keywords }}<meta property="og:keywords" content="{{ .Site.Params.Keywords }}">{{ end }}
-
-    <!-- Twitter data -->
-    <meta name="twitter:site" content="{{ .Site.Params.Name }}">
-    <meta name="twitter:title" content="{{ $title }}">
-    <meta name="twitter:description" content="{{ $description }}">
-    <meta name="twitter:creator" content="{{ .Site.Params.Author }}">
-    <meta name="twitter:card" content="photo" />
-    <meta name="twitter:url" content="{{ .Permalink }}?utm_medium=social_organic&amp;utm_source=twitter&amp;utm_campaign=global_brand_followers&amp;utm_content={{ .Kind }}"/>
-    {{ with .Params.images }}{{ range first 6 . }}<meta property="twitter:image" content="{{ if in . "http" }}{{ . }}{{ else }}{{ $baseurl }}{{ . }}{{ end }}" />{{ end }}{{ end }}
-
-    <meta name="msapplication-TileImage" content="/assets/ms-icon-144x144.png" />
-    <meta name="msapplication-TileColor" content="#ebacbd" />
-    <meta http-equiv="Reply-to" content="polrkov.tm@gmail.com">
-    <meta name="HandheldFriendly" content="True"/>
-    <meta name="theme-color" content="#ebacbd" />
+    <title>{{ if ne .Title .Site.Title }}{{ printf "%s - %s" $.Title $.Site.Title }}{{ end }}</title>
+    {{ partial "favicons.html" . }}
+    {{ partial "meta.html" . }}
+    {{ partial "styles.html" . }}
 </head>

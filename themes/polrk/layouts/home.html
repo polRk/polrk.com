@@ -1,36 +1,89 @@
 {{ define "main" }}
-<section class="Sidebar">
-    <div class="Profile">
-        <div class="Profile-Avatar"></div>
-        <div class="Profile-Name"></div>
-        <div class="Profile-Position">CTO</div>
-        <div class="Profile-Social">
-            <a href="https://t.me/polrk" class="Social-Link"></a>
-        </div>
-    </div>
-</section>
-<main aria-role="main">
-    <header class="Header">
-        <h1 class="Title">{{.Title}}</h1>
-        {{ with .Params.subtitle }}
-        <span class="Subtitle">{{.}}</span>
-        {{ end }}
-    </header>
-    <article class="Content">
-        <!-- Note that the content for home.html, as a sort of list page, will pull from content/_index.md -->
+<main>
+    <section id="About">
         {{ .Content }}
-    </article>
-    <div class="Skills">
-        <ul class="List">
-            <li class="Item">Web Design</li>
-            <li class="Item">Web Development</li>
-            <li class="Item">Mobile Apps</li>
-            <li class="Item">Business Automation</li>
-            <li class="Item">Chatbots</li>
-            <li class="Item">Software Architecture & Design</li>
-            <li class="Item">CI / CD</li>
-            <li class="Item">Supporting</li>
-        </ul>
-    </div>
+    </section>
+    <section id="Experience">
+        <h3>Experience</h3>
+        <section>
+            <h4><strong>Automatic Solutions LLC. / </strong>Chief Technical Officer</h4>
+            <span class="Duration">July 2019 — Present</span>
+            <p></p>
+        </section>
+        <section>
+            <h4><strong>Self-Employed /</strong> Software Development</h4>
+            <span class="Duration"> December 2017 — July 2019</span>
+            <p></p>
+        </section>
+        <section>
+            <h4><strong>Freelancer /</strong> Web Development</h4>
+            <span class="Duration">September 2014 — May 2016</span>
+            <p></p>
+        </section>
+    </section>
+    <section id="Education">
+        <h3>Education</h3>
+        <section>
+            <h4><strong>BSUIR / </strong>Software for IT</h4>
+            <span class="Duration">May 2019 — Present</span>
+        </section>
+        <section>
+            <h4><strong>BSMU / </strong>General Medicine</h4>
+            <span class="Duration">May 2016 — MAY 2019</span>
+        </section>
+    </section>
+    <section id="Skills">
+        <h3>Skills</h3>
+        <section>
+            <h4><strong>Development</strong></h4>
+            <p>HTML, CSS, JavaScript, TypesSript, GoLang, GraphQL, SQL</p>
+        </section>
+        <section>
+            <h4><strong>Software</strong></h4>
+            <p>GIT, NodeJS, MySQL, PostgreSQL, MongoDB</p>
+        </section>
+        <section>
+            <h4><strong>Libraries</strong></h4>
+            <p>SASS, LESS, React, Angular, Vue, Express, Koa, Apollo</p>
+        </section>
+        <section>
+            <h4><strong>DevOPS</strong></h4>
+            <p>Docker, Kubernetess, Jenkins, Travis, Github Actions, Bitbucket Pipelines, GitLab CI/CD</p>
+        </section>
+    </section>
+
+    <section id="Certifications">
+        <h3>Certifications</h3>
+        <section>
+            <h4><strong>Yandex</strong></h4>
+            <span class="Duration">May 2019</span>
+            <p>School of development of interfaces</p>
+        </section>
+        <section>
+            <h4><strong>Udemy</strong></h4>
+            <span class="Duration">May 2020</span>
+            <p>Learn How To Code: Google's Go (golang) Programming Language</p>
+        </section>
+        <section>
+            <h4><strong>Udemy</strong></h4>
+            <span class="Duration">May 2020</span>
+            <p>Web Development w/ Google’s Go (golang) Programming Language</p>
+        </section>
+        <section>
+            <h4><strong>Udemy</strong></h4>
+            <span class="Duration">September 2019</span>
+            <p>React - The Complete Guide (incl Hooks, React Router, Redux)</p>
+        </section>
+        <section>
+            <h4><strong>Udemy</strong></h4>
+            <span class="Duration">June 2018</span>
+            <p>Understanding TypeScript</p>
+        </section>
+        <section>
+            <h4><strong>Udemy</strong></h4>
+            <span class="Duration">June 2019</span>
+            <p>GraphQL with React: The Complete Developers Guide</p>
+        </section>
+    </section>
 </main>
 {{ end }}
