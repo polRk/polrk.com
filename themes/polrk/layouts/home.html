@@ -1,14 +1,36 @@
 {{ define "main" }}
+<section class="Sidebar">
+    <div class="Profile">
+        <div class="Profile-Avatar"></div>
+        <div class="Profile-Name"></div>
+        <div class="Profile-Position">CTO</div>
+        <div class="Profile-Social">
+            <a href="https://t.me/polrk" class="Social-Link"></a>
+        </div>
+    </div>
+</section>
 <main aria-role="main">
-    <header class="homepage-header">
-        <h1>{{.Title}}</h1>
+    <header class="Header">
+        <h1 class="Title">{{.Title}}</h1>
         {{ with .Params.subtitle }}
-        <span class="subtitle">{{.}}</span>
+        <span class="Subtitle">{{.}}</span>
         {{ end }}
     </header>
-    <div class="homepage-content">
-        <!-- Note that the content for index.html, as a sort of list page, will pull from content/_index.md -->
-        {{.Content}}
+    <article class="Content">
+        <!-- Note that the content for home.html, as a sort of list page, will pull from content/_index.md -->
+        {{ .Content }}
+    </article>
+    <div class="Skills">
+        <ul class="List">
+            <li class="Item">Web Design</li>
+            <li class="Item">Web Development</li>
+            <li class="Item">Mobile Apps</li>
+            <li class="Item">Business Automation</li>
+            <li class="Item">Chatbots</li>
+            <li class="Item">Software Architecture & Design</li>
+            <li class="Item">CI / CD</li>
+            <li class="Item">Supporting</li>
+        </ul>
     </div>
 </main>
 {{ end }}

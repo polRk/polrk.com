@@ -1,0 +1,58 @@
+{{ $baseurl := .Site.BaseURL }}
+{{ $title := .Site.Title }}
+{{ $description := .Site.Params.Description }}
+{{ if ne .Title .Site.Title }}{{ $title = printf "%s - %s" $.Title $.Site.Title }}{{ end }}
+{{ if not .IsHome }}{{ if .Description }}{{ $description = .Description }}{{ else if .IsPage}}{{ $description = .Summary }}{{ end }}{{ end }}
+
+<head lang="en">
+    <meta charset="utf-8" />
+    <title>{{ $title }}</title>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/community/apple-icon-180x180-4b5ac7f80f7cb483dde5afeb99c279301c50ec3670129c73ce568f1b465354be.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/community/apple-icon-152x152-ff64fd3242c24284fefdaec8d6d85c68f98744142d58b950f7ec67cbf03251d7.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/community/apple-icon-144x144-3018401d3d675917b06ded0482cdf53a7c3558b4dc7b6b8de21a485a8da27dfe.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/community/apple-icon-120x120-052cdf68a3af8b01c3fd0d46ed35f8f089c10c690109d20e7b186f0159391863.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/community/apple-icon-114x114-8d862033fc61d86a60b4bdbbbab284da399da714089995ce7efc249f36409517.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/community/apple-icon-76x76-d7c1877f2224ca127b591f65d16635fa7472e7b2cd0e1fe7e7dc8b74d03dd874.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/community/apple-icon-72x72-2d888cc13ddb01fb0d786a0c8567c0a2909eaeb86901da715099b6b88a36b46a.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/community/apple-icon-60x60-01be5b392df60249f168b8b2eed5c928c63aa43ac398c7180cd219c5acdd1e70.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/community/apple-icon-57x57-d060d0fd30794efd579d9edc283917e0a65adfd366e151d9a5cfd8fd7d07cb43.png" />
+
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/community/android-icon-192x192-4d13e6664f412f6904a78be76d626004bcbbd59671f6c755919628134003c2a8.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/community/favicon-32x32-e377577c425642ab495296dfec040ec903e36ffc4cd7a0a4281e84597891a774.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/community/favicon-96x96-967f34b6716bb3cffebefe1fa53206d38d60c72635e826ec5d172c58fb4ab5a9.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/community/favicon-16x16-ce9c1eb6d969d5b2ec276ae4b715756aa0e63106f33dc53a836687fdfee49ecd.png" />    
+
+	<!-- Meta Data -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="{{ .Site.Params.Author }}">
+    <meta name="description" content="{{ $description }}">
+    {{ if .Params.Keywords }}<meta name="keywords" content="{{ .Params.Keywords }}">{{ else if .Site.Params.Keywords }}<meta name="keywords" content="{{ .Site.Params.Keywords }}">{{ end }}
+    <meta name="copyright" content="{{ .Site.Params.Copyright }}">  
+
+    <!-- Open Graph data -->
+    <meta property="og:site_name" content="{{ .Site.Params.Name }}" />
+    <meta property="og:title" content="{{ $title }}" />
+    <meta property="og:description" content="{{ $description }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    {{ with .Params.images }}{{ range first 6 . }}<meta property="og:image" content="{{ if in . "http" }}{{ . }}{{ else }}{{ $baseurl }}{{ . }}{{ end }}" />{{ end }}{{ end }}
+    {{ if .Params.Keywords }}<meta property="og:keywords" content="{{ .Params.Keywords }}">{{ else if .Site.Params.Keywords }}<meta property="og:keywords" content="{{ .Site.Params.Keywords }}">{{ end }}
+
+    <!-- Twitter data -->
+    <meta name="twitter:site" content="{{ .Site.Params.Name }}">
+    <meta name="twitter:title" content="{{ $title }}">
+    <meta name="twitter:description" content="{{ $description }}">
+    <meta name="twitter:creator" content="{{ .Site.Params.Author }}">
+    <meta name="twitter:card" content="photo" />
+    <meta name="twitter:url" content="{{ .Permalink }}?utm_medium=social_organic&amp;utm_source=twitter&amp;utm_campaign=global_brand_followers&amp;utm_content={{ .Kind }}"/>
+    {{ with .Params.images }}{{ range first 6 . }}<meta property="twitter:image" content="{{ if in . "http" }}{{ . }}{{ else }}{{ $baseurl }}{{ . }}{{ end }}" />{{ end }}{{ end }}
+
+    <meta name="msapplication-TileImage" content="/assets/community/ms-icon-144x144-3018401d3d675917b06ded0482cdf53a7c3558b4dc7b6b8de21a485a8da27dfe.png" />
+    <meta name="msapplication-TileColor" content="#ebacbd" />
+    <meta http-equiv="Reply-to" content="polrkov.tm@gmail.com">
+    <meta name="HandheldFriendly" content="True"/>
+    <meta name="theme-color" content="#ebacbd" />
+</head>
