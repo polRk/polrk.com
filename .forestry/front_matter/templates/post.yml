@@ -9,5 +9,6 @@ fields:
   label: Title
 pages:
 - content/about.md
+- content/contact.md
 - content/portfolio.md
 - content/resume.md
