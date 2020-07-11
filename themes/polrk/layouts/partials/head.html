@@ -4,4 +4,50 @@
     {{ partial "favicons.html" . }}
     {{ partial "meta.html" . }}
     {{ partial "styles.html" . }}
+    <style>
+        :root {
+            --color-primary: #ee0000;
+            --color-secondary: #757575;
+          }
+          
+          body {
+            margin: 0;
+            font-size: 16px;
+            max-width: 768px;
+            margin: 0 auto;
+            padding: 2rem;
+            font-family: 'Open Sans', 'Arial', sans-serif;
+          }
+
+          p, h1, h2, h3, h4 {
+            margin: 0;
+            font-weight: 300;
+          }
+
+          h1 {
+            font-size: 1.8rem;
+            font-weight: 400;
+          }
+          
+          h2 {
+            font-size: 1.4rem;
+          }
+          
+          h3 {
+            font-size: 1.3rem;
+          }
+          
+          h4 {
+            font-size: 1.2rem;
+          }
+          
+          p {
+            margin-bottom: 1rem;
+          }
+          
+          h2, h3, p strong {
+            color: var(--color-primary);
+            font-weight: 600;
+          }          
+    </style>
 </head>
