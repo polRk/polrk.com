@@ -13,17 +13,17 @@ main {
 }
 
 footer {
-    margin: 1rem 0;
     border-top: 1px solid #eee;
+    margin: 1rem 0;
 }
 
 footer ul {
     display: flex;
     flex-wrap: wrap;
+    font-size: .875rem;
+    justify-content: space-around;
     padding: 0;
     margin: 0;
-    justify-content: space-around;
-    font-size: .875rem;
 }
 
 li {
@@ -31,15 +31,16 @@ li {
 }
 
 footer ul li a {
-    padding: .5rem 0;
-    display: inline-flex;
-    text-decoration: none;
     color: var(--color-secondary);
+    display: inline-flex;
+    padding: .5rem 0;
+    text-decoration: none;
 }
 
 #About {
-    grid-area: about;
     border-bottom: 1px solid #eee;
+    grid-area: about;
+    padding-bottom: 1rem;
 }
 
 #Experience {
@@ -60,7 +61,7 @@ footer ul li a {
 
 .Duration {
     color: var(--color-secondary);
+    font-size: .75rem;
     font-weight: 400;
     text-transform: uppercase;
-    font-size: .75rem;
 }
