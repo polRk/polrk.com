@@ -33,7 +33,7 @@ li {
 footer ul li a {
     color: var(--color-secondary);
     display: inline-flex;
-    padding: .5rem 0;
+    padding: .5rem;
     text-decoration: none;
 }
 
