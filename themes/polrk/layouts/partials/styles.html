@@ -1,9 +1,9 @@
 {{ $styles := resources.Get "css/main.css" | minify | fingerprint }}
 {{ $fonts := resources.Get "css/fonts.css" | minify | fingerprint }}
 
-<link rel="preload" href="/fonts/open-sans-v18-latin-300.woff2" as="font">
-<link rel="preload" href="/fonts/open-sans-v18-latin-regular.woff2" as="font">
-<link rel="preload" href="/fonts/open-sans-v18-latin-600.woff2" as="font">
+<link rel="preload" href="/fonts/open-sans-v18-latin-300.woff2" as="font" crossorigin>
+<link rel="preload" href="/fonts/open-sans-v18-latin-regular.woff2" as="font" crossorigin>
+<link rel="preload" href="/fonts/open-sans-v18-latin-600.woff2" as="font" crossorigin>
 
 <link rel="preload" href="{{ $styles.Permalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="{{ $fonts.Permalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
