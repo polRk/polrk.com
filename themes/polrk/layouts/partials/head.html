@@ -1,8 +1,8 @@
 <head lang="en">
     <meta charset="utf-8"/>
     <title>{{ if ne .Title .Site.Title }}{{ printf "%s - %s" $.Title $.Site.Title }}{{ end }}</title>
-    {{ partial "favicons.html" . }}
-    {{ partial "meta.html" . }}
+    {{ partial "favicons.gohtml" . }}
+    {{ partial "meta.gohtml" . }}
     <style>
         html {
             font-size: 18px;
