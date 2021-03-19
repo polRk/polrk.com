@@ -4,15 +4,14 @@ auto_deploy: false
 admin_path: ''
 webhook_url: 
 sections:
-- type: document
-  path: products/*
-  label: Товары
-  match: "**/*"
 - type: directory
   path: content
   label: Pages
   create: all
   match: "*"
+- type: document
+  path: products/*
+  label: Товары
 upload_dir: static/uploads
 public_path: "/uploads"
 front_matter_path: ''
