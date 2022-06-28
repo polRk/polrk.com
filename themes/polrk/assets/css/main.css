@@ -9,7 +9,7 @@ header {
 
 main {
     display: grid;
-    grid-template-areas: 'about' 'experience' 'education' 'skills' 'certifications';
+    grid-template-areas: 'about' 'experience' 'education' 'stack' 'certifications';
 }
 
 footer {
@@ -51,8 +51,8 @@ footer ul li a {
     grid-area: education;
 }
 
-#Skills {
-    grid-area: skills;
+#Stack {
+    grid-area: stack;
 }
 
 #Certifications {
